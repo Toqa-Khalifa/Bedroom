@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+background-color: beige;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.navbar ul{
+    display: flex;
+}
+.logo{
+    width: 80px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slidright 1s ease forwards;
+}
+.navbar ul li{
+    list-style: none;  
+}
+.navbar ul a{
+    display: inline-block;
+    margin: 0 20px;
+text-decoration: none;
+color: peru;
+cursor: pointer;
+animation: slidtop 1.5s ease forwards;
+animation-delay: calc(.2s*var(--i));
+
+}
+.navbar a:hover{
+    color: #1743e3;
+}
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+}
+.social-media a{
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+    animation: slidSoc 2s ease forwards;
+    animation-delay: calc(.2s*var(--i));
+}
+.social-media a:hover{
+    border-color: peru;
+}
+.social-media a .fa{
+    font-size: 24px;
+    color: peru;
+    transform: rotate(-45deg);
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    padding: 50px 8% 0;
+justify-content: space-between;    
+align-items: center;
+overflow: hidden;
+position: relative;
+}
+.bedroom-content{
+    max-width: 630px;
+  
+}
+.bedroom-content h1{
+    font-size: 50px;
+    line-height: 1.3;
+    animation: slidbottom 2s ease forwards;
+    color: darkslategray;
+}
+.bedroom-content p{
+   line-height: 1.3;
+    font-size: 20px;
+    color: darkslategray;
+}
+button{
+    text-align: center;
+    border-radius: 25px;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border: 2px solid peru;
+    width: 200px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 9;
+    color: darkslategray;
+}
+button:hover{
+    border: none;
+    background-color: peru;
+    color: #fff;
+    }
+    .bedroom-img{
+        width: 850px;
+        height: 350px;
+        position: relative;
+        right: -7%;
+        
+    }
+    .bedroom-side{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 25px solid peru;
+        background: beige;
+        animation: zoomOut 1s ease forwards;
+    }
+    .bedroom-img .bedroom-side img{
+        position: absolute;
+        max-width: 850px;
+        top:30px;
+        left:-100px;
+        width:550px;
+        animation: bedroom 2s ease forwards;
+    }
+    /* Keyframes Animation */
+
+    @keyframes slidright{
+        0%{
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slidtop{
+        0%{
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slidSoc{
+        0%{
+            transform: translateX(100px) rotate(45deg);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0) rotate(45deg);
+            opacity: 1;
+        }
+    }
+    @keyframes slidbottom{
+        0%{
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes zoomOut{
+        0%{
+            transform: scale(1.1);
+            opacity: 0;
+        }
+        100%{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    @keyframes bedroom{
+        0%{
+            transform: translate(-300px, 300px) scale(0);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0) scale(1);
+            opacity: 1;
+        }
+    }
